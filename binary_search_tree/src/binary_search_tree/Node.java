@@ -6,6 +6,7 @@ public class Node {
 	private String definition; 
 	private Node rightChild;
 	private Node leftChild;
+	private Node next;
 	
 //
 //	public static void main(String[] args) {
@@ -19,19 +20,20 @@ public class Node {
 		this.definition = definition;
 		this.setRightChild(null);
 		this.setLeftChild(null);
+		setNext(null);
 	}
 	
-	public static String getWord(Node node) {
-		return node.word;
+	public String getWord() {
+		return this.word;
 	}
 	
 	public String getDefinition() {
-		return definition;
+		return this.definition;
 	}
 
 
 	public Node getLeftChild() {
-		return leftChild;
+		return this.leftChild;
 	}
 
 	public void setLeftChild(Node leftChild) {
@@ -39,11 +41,23 @@ public class Node {
 	}
 
 	public Node getRightChild() {
-		return rightChild;
+		return this.rightChild;
 	}
 
 	public void setRightChild(Node rightChild) {
 		this.rightChild = rightChild;
+	}
+
+	public Node getNext() {
+		return this.next;
+	}
+
+	public void setNext(Node next) {
+		this.next = next;
+	}
+	
+	public void getString() {
+		System.out.print(this.word + ": " + this.definition);
 	}
 	
 	//	public void setLeftChild(Node current, Node left) {
