@@ -19,6 +19,7 @@ public class BinarySearchTree {
 					currentNode.setLeftChild(node);
 					break;
 				} else {
+					currentNode = currentNode.getLeftChild();
 					continue;
 				}
 				//currentNode.setLeftChild(currentNode, currentNode);
@@ -27,6 +28,7 @@ public class BinarySearchTree {
 					currentNode.setRightChild(node);
 					break;
 				} else {
+					currentNode = currentNode.getRightChild();
 					continue;
 				}
 				//currentNode.setRightChild(currentNode, currentNode);
@@ -41,16 +43,16 @@ public class BinarySearchTree {
 		return root;
 	}
 	
-	public static void printBinarySearchTree(BinarySearchTree tree) {
-		Node currentNode = tree.getRoot();
+	public void printBinarySearchTree() {
+		Node currentNode = this.getRoot();
 		
 		
 		//tree size and pq size matter
 		
 		//tree that will be printed
-		Queue treeQueue = new Queue(tree.getRoot());
+		Queue treeQueue = new Queue(this.getRoot());
 		//keeps track of place in tree for BFS
-		Queue visited = new Queue(tree.getRoot());
+		Queue visited = new Queue(this.getRoot());
 		
 		//
 		while(!visited.isEmpty()) {
